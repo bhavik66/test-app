@@ -15,9 +15,6 @@ import java.util.Map;
 
 public class ToastModule extends ReactContextBaseJavaModule {
 
-    private static final String DURATION_SHORT_KEY = "SHORT";
-    private static final String DURATION_LONG_KEY = "LONG";
-
     public ToastModule(ReactApplicationContext reactContext) {
         super(reactContext);
     }
@@ -27,16 +24,8 @@ public class ToastModule extends ReactContextBaseJavaModule {
         return "Toast";
     }
 
-    @Override
-    public Map<String, Object> getConstants() {
-        final Map<String, Object> constants = new HashMap<>();
-        constants.put(DURATION_SHORT_KEY, Toast.LENGTH_SHORT);
-        constants.put(DURATION_LONG_KEY, Toast.LENGTH_LONG);
-        return constants;
-    }
-
     @ReactMethod
-    public void show(int duration) {
-        Toast.makeText(getReactApplicationContext(), "Toast from Native Code", duration).show();
+    public void show() {
+        Toast.makeText(getReactApplicationContext(), "Toast from Native Code", Toast.LENGTH_SHORT).show();
     }
 }

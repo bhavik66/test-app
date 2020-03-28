@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {SafeAreaView, View, Text} from 'react-native';
 import {connect} from 'react-redux';
 
 import Card from '../components/Card';
@@ -50,7 +50,7 @@ export class Signup extends Component {
     const {name, email, password} = this.state;
 
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Card>
           <Text style={styles.txtLogin}>Signup</Text>
           <Input
@@ -78,7 +78,7 @@ export class Signup extends Component {
             onPress={this.onSignUp}
           />
         </Card>
-      </View>
+      </SafeAreaView>
     );
   }
 }

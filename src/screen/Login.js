@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {SafeAreaView, View, Text} from 'react-native';
 import {connect} from 'react-redux';
 
 import Card from '../components/Card';
@@ -49,7 +49,7 @@ export class Login extends Component {
   render() {
     const {email, password} = this.state;
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <Card>
           <Text style={styles.txtLogin}>Login</Text>
           <Input
@@ -77,7 +77,7 @@ export class Login extends Component {
             onPress={() => this.props.navigation.navigate('Signup')}
           />
         </View>
-      </View>
+      </SafeAreaView>
     );
   }
 }

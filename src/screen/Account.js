@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text} from 'react-native';
+import {SafeAreaView, View, Text} from 'react-native';
 import {connect} from 'react-redux';
 
 import Button from '../components/Button';
@@ -24,7 +24,7 @@ export class Account extends Component {
   render() {
     const {name, email} = this.props;
     return (
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <View>
           <Text style={styles.txt}> {name} </Text>
           <Text style={styles.txt}> {email} </Text>
@@ -34,7 +34,7 @@ export class Account extends Component {
           onPress={this.onLogout}
           containerStyle={styles.btn}
         />
-      </View>
+      </SafeAreaView>
     );
   }
 }
