@@ -33,7 +33,17 @@ export class Login extends Component {
   }
 
   onLogin = () => {
-    this.props.login(this.state);
+    const {email, password} = this.state;
+    if (
+      email !== '' &&
+      email !== null &&
+      password !== '' &&
+      password !== null
+    ) {
+      this.props.login({email, password});
+    } else {
+      alert('Empty field not allowed');
+    }
   };
 
   render() {

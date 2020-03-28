@@ -28,11 +28,22 @@ export class Signup extends Component {
 
   onSignUp = () => {
     const {name, email, password} = this.state;
-    this.props.singUp({
-      name,
-      email,
-      password,
-    });
+    if (
+      name !== '' &&
+      name !== null &&
+      email !== '' &&
+      email !== null &&
+      password !== '' &&
+      password !== null
+    ) {
+      this.props.singUp({
+        name,
+        email,
+        password,
+      });
+    } else {
+      alert('Empty field not allowed');
+    }
   };
 
   render() {

@@ -10,7 +10,13 @@ const Tab = createBottomTabNavigator();
 
 function Dashboard() {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      tabBarOptions={{
+        showIcon: false,
+        labelStyle: {
+          fontSize: 14,
+        },
+      }}>
       <Tab.Screen name="Tab1" component={Tab1} />
       <Tab.Screen name="Tab2" component={Tab2} />
       <Tab.Screen name="Tab3" component={Tab3} />
