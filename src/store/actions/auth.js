@@ -1,14 +1,37 @@
 import actions from '../constants';
+import LoginStatus from '../../constants/auth';
 
-const test = () => {
+const login = (data) => {
+  return (dispatch, getState) => {
+    const users = getState().user.get('registerUsers');
+    const user = users.filter(
+      (x) =>
+        x.get('email') === data.email && x.get('password') === data.password,
+    );
+    if (user.size > 0) {
+      dispatch({
+        type: actions.LOGIN,
+        status: LoginStatus.LOGIN,
+        payload: user.get(0),
+      });
+    } else {
+      dispatch({
+        type: actions.LOGIN,
+        status: LoginStatus.IN_VALID_USER,
+      });
+    }
+  };
+};
+
+const logout = () => {
   return (dispatch) => {
     dispatch({
-      type: actions.TEST_EVENT,
-      payload: 'Hello World 123',
+      type: actions.LOGOUT,
     });
   };
 };
 
 export default {
-  test,
+  login,
+  logout,
 };

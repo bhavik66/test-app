@@ -2,16 +2,20 @@ import Immutable from 'immutable';
 import actions from '../constants';
 
 const initialState = Immutable.fromJS({
-  testText: null,
+  loginStatus: null,
 });
 
-const config = (state = initialState, action) => {
+const auth = (state = initialState, action) => {
   switch (action.type) {
-    case actions.TEST_EVENT:
-      return state.update('testText', () => action.payload);
+    case actions.SIGN_UP:
+      return state.update('loginStatus', () => action.status);
+    case actions.LOGIN:
+      return state.update('loginStatus', () => action.status);
+    case actions.LOGOUT:
+      return state.update('loginStatus', () => null);
     default:
       return state;
   }
 };
 
-export default config;
+export default auth;

@@ -1,24 +1,52 @@
 import React, {Component} from 'react';
 import {View, Text} from 'react-native';
-import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
 
+import Button from '../components/Button';
+
+import {auth} from '../store/actions';
+
+import styles from './account-styles';
+
 export class Account extends Component {
-  static propTypes = {
-    prop: PropTypes,
+  componentDidUpdate(prevProps) {
+    if (prevProps.loginStatus !== this.props.loginStatus) {
+      if (this.props.loginStatus === null) {
+        this.props.navigation.replace('Login');
+      }
+    }
+  }
+
+  onLogout = () => {
+    this.props.logout();
   };
 
   render() {
+    const {name, email} = this.props;
     return (
-      <View>
-        <Text> prop </Text>
+      <View style={styles.container}>
+        <View>
+          <Text style={styles.txt}> {name} </Text>
+          <Text style={styles.txt}> {email} </Text>
+        </View>
+        <Button
+          title={'Logout'}
+          onPress={this.onLogout}
+          containerStyle={styles.btn}
+        />
       </View>
     );
   }
 }
 
-const mapStateToProps = (state) => ({});
+const mapStateToProps = (state) => ({
+  loginStatus: state.auth.get('loginStatus'),
+  name: state.user.getIn(['info', 'name']),
+  email: state.user.getIn(['info', 'email']),
+});
 
-const mapDispatchToProps = {};
+const mapDispatchToProps = {
+  logout: auth.logout,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Account);
