@@ -17,6 +17,7 @@
 		2D02E4BF1E0B4AB3006451C7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		2DCD954D1E0B4F2C00145EB5 /* TestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* TestAppTests.m */; };
 		3F1920D1666CF308E44EDAEC /* libPods-TestApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F424FBD73C0A6C55AE0BB60 /* libPods-TestApp.a */; };
+		8230E33F242F2AAA006EDCCD /* ToastModule.m in Sources */ = {isa = PBXBuildFile; fileRef = 8230E33E242F2AAA006EDCCD /* ToastModule.m */; };
 		BBF25C4EF46378B30E373EBA /* libPods-TestApp-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D713E8DE0C94FDEBDC1158ED /* libPods-TestApp-tvOS.a */; };
 		C292045B4445E34AC4757F1B /* libPods-TestApp-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 500AC4F4988678E7F5F94058 /* libPods-TestApp-tvOSTests.a */; };
 		FFCDBAB43CF10E754D381AF5 /* libPods-TestApp-TestAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A69925890B1C1990749A1043 /* libPods-TestApp-TestAppTests.a */; };
@@ -59,6 +60,8 @@
 		32985D73E79DDD7D0020520C /* Pods-TestApp-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp-tvOS.debug.xcconfig"; path = "Target Support Files/Pods-TestApp-tvOS/Pods-TestApp-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		500AC4F4988678E7F5F94058 /* libPods-TestApp-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TestApp-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		79AA15738C0199FAFB3DD4F7 /* Pods-TestApp-TestAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp-TestAppTests.release.xcconfig"; path = "Target Support Files/Pods-TestApp-TestAppTests/Pods-TestApp-TestAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		8230E33D242F2AAA006EDCCD /* ToastModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ToastModule.h; sourceTree = "<group>"; };
+		8230E33E242F2AAA006EDCCD /* ToastModule.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ToastModule.m; sourceTree = "<group>"; };
 		84C9E77A2DB2964B567ADFEF /* Pods-TestApp-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp-tvOSTests.release.xcconfig"; path = "Target Support Files/Pods-TestApp-tvOSTests/Pods-TestApp-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		8EDED5792C2BDB71B8922A9D /* Pods-TestApp-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp-tvOS.release.xcconfig"; path = "Target Support Files/Pods-TestApp-tvOS/Pods-TestApp-tvOS.release.xcconfig"; sourceTree = "<group>"; };
 		96E2C2F12745EF2D16E574D9 /* Pods-TestApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TestApp.debug.xcconfig"; path = "Target Support Files/Pods-TestApp/Pods-TestApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +162,8 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				8230E33D242F2AAA006EDCCD /* ToastModule.h */,
+				8230E33E242F2AAA006EDCCD /* ToastModule.m */,
 				13B07FAE1A68108700A75B9A /* TestApp */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* TestAppTests */,
@@ -194,7 +199,6 @@
 				1CD72D6C26DFFF4FD2A63CE7 /* Pods-TestApp-tvOSTests.debug.xcconfig */,
 				84C9E77A2DB2964B567ADFEF /* Pods-TestApp-tvOSTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -532,6 +536,7 @@
 			files = (
 				13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */,
 				13B07FC11A68108700A75B9A /* main.m in Sources */,
+				8230E33F242F2AAA006EDCCD /* ToastModule.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

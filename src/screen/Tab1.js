@@ -8,10 +8,7 @@ import {Toast} from '../utils/nativeModules';
 const Tab1 = () => {
   return (
     <View>
-      <Button
-        title={'Check Native Event'}
-        onPress={() => Toast.show(Toast.SHORT)}
-      />
+      <Button title={'Check Native Event'} onPress={() => Toast.show()} />
     </View>
   );
 };
